@@ -6,8 +6,9 @@
     <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"9700abca30",applicationID:"9339867"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1214.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#bb946a">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="pingback" href="https://alis.vamtam.com/xmlrpc.php" />
-    <title>Alis &amp; Joseph &#8211; Are Just Getting Married</title>
+    <title>Yami &amp; Eze</title>
     <style id="vamtam-theme-options">:root {--vamtam-site-max-width:1260px;
       --vamtam-body-background-background-image:none;
       --vamtam-body-background-background-color:#ffffff;
@@ -731,19 +732,21 @@
         <div class="first-row header-content-wrapper header-padding">
           <div class="logo-wrapper logo-type-site-title">
             <div class="logo-tagline">
-              <a href="https://alis.vamtam.com/" title="Alis &amp; Joseph" class="logo text-logo" style="min-width:0px"> <span class="left-name">Alis</span>
-              <span class="name-delimiter">&amp;</span>
-              <span class="right-name">Joseph</span>
+              <a href="" title="Yami &amp; Eze" class="logo text-logo" style="min-width:0px">
+                <span class="left-name" style="padding-right:0.25em;">Yami </span>
+
+                <span class="name-delimiter"> &amp;</span>
+                <span class="right-name">Eze</span>
               </a>
-              <span class="site-tagline">Are Just Getting Married</span>
-            </div>
-            <div class="mobile-logo-additions">
-              <button class="header-search icon vamtam-overlay-search-trigger">&#59752;</button>
-              <div id="vamtam-megamenu-main-menu-toggle"></div>
-            </div>
+              <!-- <span class="site-tagline">Nos vamos a casar!</span> -->
+            </div>            
+              <div class="mobile-logo-additions">
+                <button class="header-search icon vamtam-overlay-search-trigger">&#59752;</button>
+                <div id="vamtam-megamenu-main-menu-toggle"></div>
+              </div>
           </div>
         </div>
-        <div class="second-row header-content-wrapper">
+        <div class="second-row header-content-wrapper" style="display: none;">
           <div class="limit-wrapper header-padding">
             <div class="second-row-columns">
               <div class="header-left"></div>
@@ -971,6 +974,8 @@
                       </div>
                     </div>
                   </div>
+
+                  <!-- LLEGA EL DIA -->
                   <div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5a1b0c5cde714 fl-row-bg-attachment-scroll" data-node="5a1b0c5cde714">
                     <div class="fl-row-content-wrap">
                       <div class="fl-row-content fl-row-fixed-width fl-node-content">
@@ -989,14 +994,14 @@
                               <div class="fl-module fl-module-vamtam-heading fl-node-5a1b0ce6333e6" data-node="5a1b0ce6333e6">
                                 <div class="fl-module-content fl-node-content">
                                   <h3 class="vamtam-heading ">
-                                    <span class="vamtam-heading-text">The Big Day</span>
+                                    <span class="vamtam-heading-text">Llega el gran día!</span>
                                   </h3>
                                 </div>
                               </div>
                               <div class="fl-module fl-module-vamtam-heading fl-node-5a1b0d014c70b" data-node="5a1b0d014c70b">
                                 <div class="fl-module-content fl-node-content">
                                   <h2 class="vamtam-heading ">
-                                    <span class="vamtam-heading-text">06 . August . 2022</span>
+                                    <span class="vamtam-heading-text">28 . 02 . 2022</span>
                                   </h2>
                                 </div>
                               </div>
@@ -1018,7 +1023,7 @@
                                     <div class="fl-module fl-module-rich-text fl-node-5a1b0e2e491ff" data-node="5a1b0e2e491ff">
                                       <div class="fl-module-content fl-node-content">
                                         <div class="fl-rich-text">
-                                          <p style="text-align: center;">We are so excited to celebrate our special day with our family and friends.<br /> Thank you so much for visiting our wedding website!</p>
+                                          <p style="text-align: center;">Estamos muy emocionados de celebrar nuestro día especial con todos ustedes.<br/>Ansiosos de nos acompañen en este momento tan especial!</p>
                                         </div>
                                       </div>
                                     </div>
@@ -1034,6 +1039,8 @@
                       </div>
                     </div>
                   </div>
+
+                  <!-- Countdown -->
                   <div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5a1b101fcf4ad fl-row-bg-attachment-scroll" data-node="5a1b101fcf4ad">
                     <div class="fl-row-content-wrap">
                       <div class="fl-row-content fl-row-fixed-width fl-node-content">
@@ -1061,7 +1068,7 @@
                                     <div class="fl-module fl-module-vamtam-heading fl-node-5a1b19dc1f5e6" data-node="5a1b19dc1f5e6">
                                       <div class="fl-module-content fl-node-content">
                                         <h5 class="vamtam-heading ">
-                                          <span class="vamtam-heading-text">Just some hours…</span>
+                                          <span class="vamtam-heading-text">Ya solo quedan...</span>
                                         </h5>
                                       </div>
                                     </div>
@@ -1110,7 +1117,7 @@
                                     <div class="fl-module fl-module-vamtam-heading fl-node-5a1b197eb7635" data-node="5a1b197eb7635">
                                       <div class="fl-module-content fl-node-content">
                                         <h5 class="vamtam-heading ">
-                                          <span class="vamtam-heading-text">…until we get married!</span>
+                                          <span class="vamtam-heading-text">...para que nos casemos!</span>
                                         </h5>
                                       </div>
                                     </div>
@@ -1138,12 +1145,17 @@
                       </div>
                     </div>
                   </div>
+
+                  <!-- NUESTRA HISTORIA -->
                   <div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5a1b2190e827d fl-row-bg-attachment-scroll" data-node="5a1b2190e827d">
                     <div class="fl-row-content-wrap">
                       <div class="fl-row-content fl-row-fixed-width fl-node-content">
                         <div class="fl-col-group fl-node-5a1b2190ef228 fl-col-group-custom-width" data-node="5a1b2190ef228">
+                          
+                          <!-- IZQUIERDA -->
                           <div class="fl-col fl-node-5a1b2190ef318 fl-col-small fl-col-has-cols" data-node="5a1b2190ef318">
-                            <div class="fl-col-content fl-node-content">
+                            <div class="fl-col-content fl-node-content" style="padding-top:20em;">
+                              <!--
                               <div class="fl-col-group fl-node-5a1b5278b24d8 fl-col-group-nested" data-node="5a1b5278b24d8">
                                 <div class="fl-col fl-node-5a1b5278b2674" data-node="5a1b5278b2674">
                                   <div class="fl-col-content fl-node-content">
@@ -1286,8 +1298,11 @@
                                   </div>
                                 </div>
                               </div>
+                              -->
                             </div>
                           </div>
+
+                          <!-- CENTRO -->
                           <div class="fl-col fl-node-5a1b2190ef360 fl-col-small fl-col-has-cols vamtam-add-shadow" data-node="5a1b2190ef360">
                             <div class="fl-col-content fl-node-content">
                               <div class="fl-col-group fl-node-5a1daa1418cd3 fl-col-group-nested" data-node="5a1daa1418cd3">
@@ -1346,7 +1361,7 @@
                                     <div class="fl-module fl-module-rich-text fl-node-5a1b3bb6720f8" data-node="5a1b3bb6720f8">
                                       <div class="fl-module-content fl-node-content">
                                         <div class="fl-rich-text">
-                                          <p style="text-align: center;">They say opposites attract, right? We're so thankful that we were introduced by our friends, Anna &amp; Joseph, because we may not have met otherwise!</p>
+                                          <p style="text-align: center;">1234567890 1234567890 1234567890 They say opposites attract, right? We're so thankful that we were introduced by our friends, Anna &amp; Joseph, because we may not have met otherwise!</p>
                                         </div>
                                       </div>
                                     </div>
@@ -1536,8 +1551,11 @@
                               </div>
                             </div>
                           </div>
+
+                          <!-- DERECHA -->
                           <div class="fl-col fl-node-5a1b2190ef3a2 fl-col-small fl-col-has-cols" data-node="5a1b2190ef3a2">
-                            <div class="fl-col-content fl-node-content">
+                            <div class="fl-col-content fl-node-content" style="padding-top:100em;background-position: left top;">
+                              <!--
                               <div class="fl-col-group fl-node-5a1b5e033c076 fl-col-group-nested" data-node="5a1b5e033c076">
                                 <div class="fl-col fl-node-5a1b5e033c221" data-node="5a1b5e033c221">
                                   <div class="fl-col-content fl-node-content">
@@ -1600,7 +1618,7 @@
                                           <span class="fl-icon">
                                           <a href="#" target="_blank">
                                           <i class="icon icon-b theme " data-icon="&#59718;"></i>
-                                          </a> </span>
+                                          </a> </span>padding-top:50em
                                         </div>
                                       </div>
                                     </div>
@@ -1680,12 +1698,16 @@
                                   </div>
                                 </div>
                               </div>
+                            -->
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+
+                  <!-- Captured Moments -->
+                  <!--
                   <div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5a1b603ce2365 fl-row-bg-attachment-scroll" data-node="5a1b603ce2365">
                     <div class="fl-row-content-wrap">
                       <div class="fl-row-content fl-row-fixed-width fl-node-content">
@@ -1786,6 +1808,9 @@
                       </div>
                     </div>
                   </div>
+                  -->
+
+                  <!-- Are you attending -->
                   <div class="fl-row fl-row-full-width fl-row-bg-photo fl-node-5a1b6f20bd9a5 fl-row-bg-attachment-scroll" data-node="5a1b6f20bd9a5">
                     <div class="fl-row-content-wrap">
                       <div class="fl-row-content fl-row-fixed-width fl-node-content">
@@ -1822,14 +1847,14 @@
                               <div class="fl-module fl-module-vamtam-heading fl-node-5a1b611a9b798" data-node="5a1b611a9b798">
                                 <div class="fl-module-content fl-node-content">
                                   <h2 class="vamtam-heading ">
-                                    <span class="vamtam-heading-text">Are you attending?</span>
+                                    <span class="vamtam-heading-text">Confirmar asistencia</span>
                                   </h2>
                                 </div>
                               </div>
                               <div class="fl-module fl-module-rich-text fl-node-5a1b705077935" data-node="5a1b705077935">
                                 <div class="fl-module-content fl-node-content">
                                   <div class="fl-rich-text">
-                                    <p style="text-align: center;">Kindly respond before 30 August</p>
+                                    <p style="text-align: center;">Confirmar hasta el 05 de Febrero</p>
                                   </div>
                                 </div>
                               </div>
@@ -1849,6 +1874,7 @@
                                   </h4>
                                 </div>
                               </div>
+                              <!--
                               <div class="fl-module fl-module-vamtam-ninja-form fl-node-5a1b72800e053" data-node="5a1b72800e053">
                                 <div class="fl-module-content fl-node-content">
                                   <noscript class="ninja-forms-noscript-message">
@@ -1875,6 +1901,7 @@
                                   </div>
                                 </div>
                               </div>
+                              -->
                             </div>
                           </div>
                           <div class="fl-col fl-node-5a1b6f20cc54c fl-col-small fl-visible-desktop-medium" data-node="5a1b6f20cc54c">
@@ -1884,6 +1911,8 @@
                       </div>
                     </div>
                   </div>
+
+                  <!-- Organization -->
                   <div class="fl-row fl-row-full-width fl-row-bg-photo fl-node-5a1b8a7e84a91 fl-row-bg-attachment-scroll" data-node="5a1b8a7e84a91">
                     <div class="fl-row-content-wrap">
                       <div class="fl-row-content fl-row-fixed-width fl-node-content">
@@ -1905,7 +1934,7 @@
                                     <div class="fl-module fl-module-vamtam-heading fl-node-5a1b8f77607d9" data-node="5a1b8f77607d9">
                                       <div class="fl-module-content fl-node-content">
                                         <h2 class="vamtam-heading ">
-                                          <span class="vamtam-heading-text">Organization</span>
+                                          <span class="vamtam-heading-text">Organización</span>
                                         </h2>
                                       </div>
                                     </div>
@@ -1921,7 +1950,7 @@
                                     <div class="fl-module fl-module-rich-text fl-node-5a1b9046ae53a" data-node="5a1b9046ae53a">
                                       <div class="fl-module-content fl-node-content">
                                         <div class="fl-rich-text">
-                                          <p style="text-align: center;">Information, timing, locations.. etc</p>
+                                          <p style="text-align: center;">Información, horarios, lugares.. etc</p>
                                         </div>
                                       </div>
                                     </div>
@@ -1932,6 +1961,7 @@
                           </div>
                           <div class="fl-col fl-node-5a1b8a7e93edd fl-col-small fl-col-has-cols" data-node="5a1b8a7e93edd">
                             <div class="fl-col-content fl-node-content">
+                              <!-- CEREMONIA -->
                               <div class="fl-col-group fl-node-5a1b8acbe78ff fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="5a1b8acbe78ff">
                                 <div class="fl-col fl-node-5a1b8acbe7a7c fl-col-small vamtam-add-shadow" data-node="5a1b8acbe7a7c">
                                   <div class="fl-col-content fl-node-content">
@@ -1951,48 +1981,49 @@
                                     <div class="fl-module fl-module-vamtam-heading fl-node-5a1b8b06195cd" data-node="5a1b8b06195cd">
                                       <div class="fl-module-content fl-node-content">
                                         <h2 class="vamtam-heading ">
-                                          <span class="vamtam-heading-text">16:00</span>
+                                          <span class="vamtam-heading-text">17:00</span>
                                         </h2>
                                       </div>
                                     </div>
                                     <div class="fl-module fl-module-vamtam-heading fl-node-5a1b8c5cb25ef" data-node="5a1b8c5cb25ef">
                                       <div class="fl-module-content fl-node-content">
                                         <h3 class="vamtam-heading ">
-                                          <span class="vamtam-heading-text">Wedding <br>Ceremony</span>
+                                          <span class="vamtam-heading-text">Ceremonia</span>
                                         </h3>
                                       </div>
                                     </div>
                                     <div class="fl-module fl-module-rich-text fl-node-5a1b8c7c2ba6c" data-node="5a1b8c7c2ba6c">
                                       <div class="fl-module-content fl-node-content">
                                         <div class="fl-rich-text">
-                                          <p style="text-align: center;">We invite you to join us in celebrating our love. On this day we will marry the one we laugh with, dream with, love. We have chosen to continue our growth through marriage.</p>
+                                          <p style="text-align: center;">Te invitamos a unirte a nosotros para celebrar nuestro amor. En este día nos casaremos con aquel con quien reímos, soñamos, amamos. Hemos elegido continuar nuestro crecimiento a través del matrimonio.</p>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
+                              <!-- FIESTA -->
                               <div class="fl-col-group fl-node-5a1b8d08a3a62 fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width fl-col-group-responsive-reversed" data-node="5a1b8d08a3a62">
                                 <div class="fl-col fl-node-5a1b8d08a3bd5 fl-col-small" data-node="5a1b8d08a3bd5">
                                   <div class="fl-col-content fl-node-content">
                                     <div class="fl-module fl-module-vamtam-heading fl-node-5a1b8e50a3c1d" data-node="5a1b8e50a3c1d">
                                       <div class="fl-module-content fl-node-content">
                                         <h2 class="vamtam-heading ">
-                                          <span class="vamtam-heading-text">21:00</span>
+                                          <span class="vamtam-heading-text"></span>
                                         </h2>
                                       </div>
                                     </div>
                                     <div class="fl-module fl-module-vamtam-heading fl-node-5a1b8dad08de4" data-node="5a1b8dad08de4">
                                       <div class="fl-module-content fl-node-content">
                                         <h3 class="vamtam-heading ">
-                                          <span class="vamtam-heading-text">Lunch Time</span>
+                                          <span class="vamtam-heading-text">Fiesta</span>
                                         </h3>
                                       </div>
                                     </div>
                                     <div class="fl-module fl-module-rich-text fl-node-5a1b8db3952e9" data-node="5a1b8db3952e9">
                                       <div class="fl-module-content fl-node-content">
                                         <div class="fl-rich-text">
-                                          <p style="text-align: center;">We stopped by Carino's over labor day weekend and spoke with one of the event manager/chef guys. He was sooo nice and it sounds like it's gonna be an awesome lunch.</p>
+                                          <p style="text-align: center;">Luego de la ceremonia iremos a cenar, bailar y festejar!</p>
                                         </div>
                                       </div>
                                     </div>
@@ -2012,7 +2043,8 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="fl-col-group fl-node-5a1b8dec0c951 fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="5a1b8dec0c951">
+
+                              <!-- <div class="fl-col-group fl-node-5a1b8dec0c951 fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="5a1b8dec0c951">
                                 <div class="fl-col fl-node-5a1b8dec0cab4 fl-col-small vamtam-add-shadow" data-node="5a1b8dec0cab4">
                                   <div class="fl-col-content fl-node-content">
                                     <div class="fl-module fl-module-photo fl-node-5a1b8e196da61" data-node="5a1b8e196da61">
@@ -2051,8 +2083,9 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                              <div class="fl-col-group fl-node-5a1b8e9559fd4 fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width fl-col-group-responsive-reversed" data-node="5a1b8e9559fd4">
+                              </div> -->
+
+                              <!-- <div class="fl-col-group fl-node-5a1b8e9559fd4 fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width fl-col-group-responsive-reversed" data-node="5a1b8e9559fd4">
                                 <div class="fl-col fl-node-5a1b8e955a157 fl-col-small" data-node="5a1b8e955a157">
                                   <div class="fl-col-content fl-node-content">
                                     <div class="fl-module fl-module-vamtam-heading fl-node-5a1b8ed798d66" data-node="5a1b8ed798d66">
@@ -2091,13 +2124,15 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>
+                              </div> -->
+
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+
                   <div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5a1b90a5f3cde fl-row-bg-attachment-scroll" data-node="5a1b90a5f3cde">
                     <div class="fl-row-content-wrap">
                       <div class="fl-row-content fl-row-full-width fl-node-content">
@@ -2107,7 +2142,8 @@
                               <div class="fl-module fl-module-vamtam-map fl-node-5a1b90b79f959" data-node="5a1b90b79f959">
                                 <div class="fl-module-content fl-node-content">
                                   <div class="fl-map">
-                                    <iframe src="about:blank" data-src="https://maps.google.com/maps?q=+Mueang+Krabi+District%2C+Thailand%2C+Phi+Phi+Islands%2C+Mueang+Krabi+District&iwloc=near&output=embed" height="465" frameborder="0" style="border:0;width:100%"></iframe>
+                                    <!-- <iframe src="about:blank" data-src="https://maps.google.com/maps?q=+Mueang+Krabi+District%2C+Thailand%2C+Phi+Phi+Islands%2C+Mueang+Krabi+District&iwloc=near&output=embed" height="465" frameborder="0" style="border:0;width:100%"></iframe> -->
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1431.2305668846961!2d-64.20313330667294!3d-31.4400385957632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a25c39fbf235%3A0x942873577c0c7c5a!2sParroquia%20San%20Juan%20Evangelista!5e0!3m2!1sen!2sar!4v1643158100309!5m2!1sen!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                                   </div>
                                 </div>
                               </div>
@@ -2117,6 +2153,8 @@
                       </div>
                     </div>
                   </div>
+
+                  <!-- LOCATION -->
                   <div class="fl-row fl-row-full-width fl-row-bg-photo fl-node-5a1c56940334b fl-row-bg-attachment-scroll" data-node="5a1c56940334b">
                     <div class="fl-row-content-wrap">
                       <div class="fl-row-content fl-row-fixed-width fl-node-content">
@@ -2148,7 +2186,7 @@
                                       <div class="fl-module-content fl-node-content">
                                         <div class="fl-photo fl-photo-align-center" itemscope itemtype="http://schema.org/ImageObject">
                                           <div class="fl-photo-content fl-photo-img-png">
-                                            <img class="fl-photo-img wp-image-15198 vamtam-lazyload-noparent" src="https://alis.vamtam.com/wp-content/uploads/2017/11/flag.png" alt="flag" itemprop="image" title="flag" /> 
+                                            <img class="fl-photo-img wp-image-15198 vamtam-lazyload-noparent" src="ar_flag.png" alt="flag" itemprop="image" title="flag" style="height: 2em;"/> 
                                           </div>
                                         </div>
                                       </div>
@@ -2156,61 +2194,85 @@
                                   </div>
                                 </div>
                               </div>
+                              
                               <div class="fl-col-group fl-node-5a1c5712c4e90 fl-col-group-nested" data-node="5a1c5712c4e90">
                                 <div class="fl-col fl-node-5a1c5712c5134" data-node="5a1c5712c5134">
                                   <div class="fl-col-content fl-node-content">
                                     <div class="fl-module fl-module-vamtam-heading fl-node-5a1c56f97073f" data-node="5a1c56f97073f">
                                       <div class="fl-module-content fl-node-content">
                                         <h2 class="vamtam-heading ">
-                                          <span class="vamtam-heading-text">Location</span>
+                                          <span class="vamtam-heading-text">Ubicaciones</span>
                                         </h2>
                                       </div>
                                     </div>
                                     <div class="fl-module fl-module-vamtam-heading fl-node-5a1c5acb85989" data-node="5a1c5acb85989">
                                       <div class="fl-module-content fl-node-content">
                                         <h5 class="vamtam-heading ">
-                                          <span class="vamtam-heading-text">Thailand, Phi Phi Islands</span>
+                                          <span class="vamtam-heading-text">Parroquia San Juan Evangelista</span>
                                         </h5>
                                       </div>
                                     </div>
                                     <div class="fl-module fl-module-vamtam-heading fl-node-5a1c5aeed67f1" data-node="5a1c5aeed67f1">
                                       <div class="fl-module-content fl-node-content">
                                         <h5 class="vamtam-heading ">
-                                          <span class="vamtam-heading-text">1060 Firs Avenue, Muswell Hill</span>
+                                          <!-- <span class="vamtam-heading-text">Parroquia San Juan Evangelista</span>
+                                          <br> -->
+                                          <a class="vamtam-heading-text" target="_blank" href="https://goo.gl/maps/VsfLgarf9AheBCTy7">Ver en Mapa</a>
+                                        </h5>
+                                      </div>
+                                    </div>
+                                    <div class="fl-module fl-module-vamtam-heading fl-node-5a1c5acb85989" data-node="5a1c5acb85989">
+                                      <div class="fl-module-content fl-node-content">
+                                        <h5 class="vamtam-heading ">
+                                          <span class="vamtam-heading-text">Casas Viejas - Campo De Eventos</span>
+                                        </h5>
+                                      </div>
+                                    </div>
+                                    <div class="fl-module fl-module-vamtam-heading fl-node-5a1c5aeed67f1" data-node="5a1c5aeed67f1">
+                                      <div class="fl-module-content fl-node-content">
+                                        <h5 class="vamtam-heading ">
+                                          <!-- <span class="vamtam-heading-text">Parroquia San Juan Evangelista</span>
+                                          <br> -->
+                                          <a class="vamtam-heading-text" target="_blank" href="https://g.page/casasviejaseventos?share">Ver en Mapa</a>
                                         </h5>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
+
                               <div class="fl-col-group fl-node-5a1c5b4ac79a3 fl-col-group-nested" data-node="5a1c5b4ac79a3">
                                 <div class="fl-col fl-node-5a1c5b4ac7b53" data-node="5a1c5b4ac7b53">
                                   <div class="fl-col-content fl-node-content">
                                     <div class="fl-module fl-module-vamtam-heading fl-node-5a1c5b52dc339" data-node="5a1c5b52dc339">
                                       <div class="fl-module-content fl-node-content">
                                         <h4 class="vamtam-heading ">
-                                          <span class="vamtam-heading-text">Travel &amp; Accommodation</span>
+                                          <span class="vamtam-heading-text">Trayecto al salón</span>
                                         </h4>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                              <div class="fl-col-group fl-node-5a1c5bb9018c8 fl-col-group-nested" data-node="5a1c5bb9018c8">
-                                <div class="fl-col fl-node-5a1c5bb901a6d fl-col-small" data-node="5a1c5bb901a6d">
-                                  <div class="fl-col-content fl-node-content">
+
+                              <!-- <div class="fl-col-group fl-node-5a1c5bb9018c8 fl-col-group-nested" data-node="5a1c5bb9018c8"> -->
+                              <div class="fl-col-group fl-node-5a1c5bb9018c8" data-node="5a1c5bb9018c8">
+                                <!-- <div class="fl-col fl-node-5a1c5bb901a6d fl-col-small" data-node="5a1c5bb901a6d"> -->
+                                  <!-- <div class="fl-col-content fl-node-content"> -->
                                     <div class="fl-module fl-module-rich-text fl-node-5a1c5c8524d85" data-node="5a1c5c8524d85">
                                       <div class="fl-module-content fl-node-content">
                                         <div class="fl-rich-text">
-                                          <p style="text-align: center;"><strong>To Thailand</strong><br />
-                                            Phuket International Airport (HKT)
+                                          <p style="text-align: center;">
+                                            <strong>Te dejamos el recorrido recomendado desde la iglesia al salón</strong>
+                                            <br>
+                                            <a class="vamtam-heading-text" target="_blank" href="https://goo.gl/maps/ypFhoNo1obu3guYW6">Ver en Mapa</a>
                                           </p>
                                         </div>
                                       </div>
                                     </div>
-                                  </div>
-                                </div>
-                                <div class="fl-col fl-node-5a1c5bb901ab5 fl-col-small" data-node="5a1c5bb901ab5">
+                                  <!-- </div> -->
+                                <!-- </div> -->
+                                <!-- <div class="fl-col fl-node-5a1c5bb901ab5 fl-col-large" data-node="5a1c5bb901ab5">
                                   <div class="fl-col-content fl-node-content">
                                     <div class="fl-module fl-module-rich-text fl-node-5a1c5cc36401a" data-node="5a1c5cc36401a">
                                       <div class="fl-module-content fl-node-content">
@@ -2222,8 +2284,8 @@
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                                <div class="fl-col fl-node-5a1c5bb901af7 fl-col-small" data-node="5a1c5bb901af7">
+                                </div> -->
+                                <!-- <div class="fl-col fl-node-5a1c5bb901af7 fl-col-small" data-node="5a1c5bb901af7">
                                   <div class="fl-col-content fl-node-content">
                                     <div class="fl-module fl-module-rich-text fl-node-5a1c5d01a04dd" data-node="5a1c5d01a04dd">
                                       <div class="fl-module-content fl-node-content">
@@ -2236,8 +2298,8 @@
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                                <div class="fl-col fl-node-5a1c5bb901b37 fl-col-small" data-node="5a1c5bb901b37">
+                                </div> -->
+                                <!-- <div class="fl-col fl-node-5a1c5bb901b37 fl-col-small" data-node="5a1c5bb901b37">
                                   <div class="fl-col-content fl-node-content">
                                     <div class="fl-module fl-module-rich-text fl-node-5a1c5d2629f5b" data-node="5a1c5d2629f5b">
                                       <div class="fl-module-content fl-node-content">
@@ -2249,7 +2311,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                </div>
+                                </div> -->
                               </div>
                               <div class="fl-col-group fl-node-5a2049c8bb3fa fl-col-group-nested" data-node="5a2049c8bb3fa">
                                 <div class="fl-col fl-node-5a2049c8bb5f8" data-node="5a2049c8bb5f8">
@@ -2272,6 +2334,8 @@
                             <div class="fl-col-content fl-node-content"></div>
                           </div>
                         </div>
+
+                        <!-- REGALO -->
                         <div class="fl-col-group fl-node-5a1c5d9d96c3a" data-node="5a1c5d9d96c3a">
                           <div class="fl-col fl-node-5a1c5d9d96e81 fl-col-has-cols" data-node="5a1c5d9d96e81">
                             <div class="fl-col-content fl-node-content">
@@ -2290,33 +2354,57 @@
                                     <div class="fl-module fl-module-vamtam-heading fl-node-5a1c657684e4e" data-node="5a1c657684e4e">
                                       <div class="fl-module-content fl-node-content">
                                         <h2 class="vamtam-heading ">
-                                          <span class="vamtam-heading-text">Gift Registry</span>
+                                          <span class="vamtam-heading-text">Regalos</span>
                                         </h2>
                                       </div>
                                     </div>
                                     <div class="fl-module fl-module-vamtam-heading fl-node-5a1c65c9d54dd" data-node="5a1c65c9d54dd">
                                       <div class="fl-module-content fl-node-content">
                                         <h5 class="vamtam-heading ">
-                                          <span class="vamtam-heading-text">Thank you!</span>
+                                          <span class="">
+                                          Para nosotros el mejor regalo es compartir ese día con nosotros!
+                                          <br>
+                                          Pero si quieren pueden colaborar con nuestra luna de miel.
+                                        </span>
                                         </h5>
                                       </div>
                                     </div>
+
                                     <div class="fl-module fl-module-rich-text fl-node-5a1c661bbedc3" data-node="5a1c661bbedc3">
                                       <div class="fl-module-content fl-node-content">
-                                        <div class="fl-rich-text">
-                                          <p style="text-align: center;">The key to a successful gift? Make it personal—no matter how much you have to spend<br />
-                                            with one of these great ideas in the links below
+                                        <!-- <div class="fl-rich-text"> -->
+                                        <div class="">
+                                          <p style="text-align:center; font-family:serif; font-size:1.2em;">
+                                            <b>Banco:</b> Galicia SA<br>
+                                            <b>CBU:</b> 12345678912345678912 <a title="Copiar" href="javascript:none;" onclick="navigator.clipboard.writeText('Value 3')"><i class="fa fa-copy"></i></a><br>
+                                            <b>ALIAS:</b> YAMI.EZE.4EVER <a title="Copiar" href="javascript:none;" onclick="navigator.clipboard.writeText('Value 4')"><i class="fa fa-copy"></i></a>
                                           </p>
                                         </div>
                                       </div>
                                     </div>
+
+                                    <div class="fl-module fl-module-rich-text fl-node-5a1c661bbedc3" data-node="5a1c661bbedc3">
+                                      <div class="fl-module-content fl-node-content">
+                                        <!-- <div class="fl-rich-text"> -->
+                                        <div class="vamtam-heading-text">
+                                          <p style="text-align:center; font-family:serif; font-size:1.2em;">
+                                            <b>Banco:</b> Galicia SA<br>
+                                            <b>CBU:</b> 12345678912345678912 <a title="Copiar" href="javascript:none;" onclick="navigator.clipboard.writeText('Value 1')"><i class="fa fa-copy"></i></a><br>
+                                            <b>ALIAS:</b> YAMI.EZE.4EVER <a title="Copiar" href="javascript:none;" onclick="navigator.clipboard.writeText('Value 2')"><i class="fa fa-copy"></i></a>
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>
+
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="fl-col-group fl-node-5a1c66a9642e3 fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="5a1c66a9642e3">
+
+                        <!-- BRANDS -->
+                        <!-- <div class="fl-col-group fl-node-5a1c66a9642e3 fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="5a1c66a9642e3">
                           <div class="fl-col fl-node-5a1c66a9644d9 fl-col-small" data-node="5a1c66a9644d9">
                             <div class="fl-col-content fl-node-content">
                               <div class="fl-module fl-module-photo fl-node-5a1c69923e049" data-node="5a1c69923e049">
@@ -2392,11 +2480,14 @@
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </div> -->
+
                       </div>
                     </div>
                   </div>
-                  <div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5a1c6b9e3e33b fl-row-bg-attachment-scroll" data-node="5a1c6b9e3e33b">
+
+                  <!-- BLOG -->
+                  <!-- <div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5a1c6b9e3e33b fl-row-bg-attachment-scroll" data-node="5a1c6b9e3e33b">
                     <div class="fl-row-content-wrap">
                       <div class="fl-row-content fl-row-fixed-width fl-node-content">
                         <div class="fl-col-group fl-node-5a1c6b9e551f0" data-node="5a1c6b9e551f0">
@@ -2662,7 +2753,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
+
                 </div>
               </div>
             </article>
@@ -2714,28 +2806,29 @@
                                     </rs-layer>
                                     <a id="slider-80-slide-253-layer-3" class="rs-layer" href="/cdn-cgi/l/email-protection#492c31282439252c092c31282439252c672a2624" target="_self" data-type="text" data-color="rgba(89, 94, 94, 0)" data-xy="x:c;xo:66px;y:b;yo:60px,60px,60px,20px;" data-text="s:14;l:20;fw:300;a:center;" data-dim="w:292px;h:40px;" data-rsp_o="off" data-rsp_bd="off" data-frame_1="sR:10;" data-frame_999="o:0;st:w;sR:8690;" style="z-index:12;font-family:Raleway;">
                                       <rs-bg-elem style="position:absolute; top:0px;left:0px;"></rs-bg-elem>
-                                      <span class="__cf_email__" data-cfemail="ee8f80808fb184819d8b9e86ae89838f8782c08d8183">[email&#160;protected]</span>
+                                      <!-- <span class="__cf_email__" data-cfemail="ee8f80808fb184819d8b9e86ae89838f8782c08d8183">[email&#160;protected]</span> -->
                                     </a>
                                     <rs-layer id="slider-80-slide-253-layer-4" data-type="text" data-color="#595e5e" data-xy="x:c;y:b;yo:50px,50px,50px,10px;" data-text="s:14;l:20;fw:300;a:center;" data-dim="w:41px;h:20px;" data-rsp_o="off" data-rsp_bd="off" data-frame_1="sR:10;" data-frame_999="o:0;st:w;sR:8690;" style="z-index:13;font-family:Raleway;">
                                       <rs-bg-elem style="position:absolute; top:0px;left:0px;"></rs-bg-elem>
-                                      ©2022
+                                      <!-- ©2022 -->
                                     </rs-layer>
-                                    <rs-layer id="slider-80-slide-253-layer-5" data-type="text" data-color="#6b8181" data-rsp_ch="on" data-xy="x:c;xo:-250px,-250px,-250px,-142px;y:b;yo:270px,270px,270px,383px;" data-text="s:40;l:32;a:inherit;" data-frame_0="x:200px;skX:-85px;" data-frame_1="st:1050;sp:1020;sR:1050;" data-frame_999="st:w;sR:6930;auto:true;" data-loop_0="xR:2px;yR:2px;oX:50;oY:50;" data-loop_999="xR:2px;yR:2px;crd:t;sp:15000;yys:t;yyf:t;" style="z-index:14;font-family:Petit Formal Script;">
+                                    <rs-layer id="slider-80-slide-253-layer-5" data-type="text" data-color="#6b8181" data-rsp_ch="on" data-xy="x:c;xo:-300px,-250px,-250px,-90px;y:b;yo:270px,270px,270px,450px;" data-text="s:40;l:32;a:inherit;" data-frame_0="x:200px;skX:-85px;" data-frame_1="st:1050;sp:1020;sR:1050;" data-frame_999="st:w;sR:6930;auto:true;" data-loop_0="xR:2px;yR:2px;oX:50;oY:50;" data-loop_999="xR:2px;yR:2px;crd:t;sp:15000;yys:t;yyf:t;" style="z-index:14;font-family:Petit Formal Script;">
                                       <rs-bg-elem style="position:absolute; top:0px;left:0px;"></rs-bg-elem>
-                                      Just
+                                      Que el amor
                                     </rs-layer>
-                                    <rs-layer id="slider-80-slide-253-layer-6" data-type="text" data-color="#6b8181" data-rsp_ch="on" data-xy="x:c;xo:290px,290px,290px,115px;y:b;yo:270px,270px,270px,124px;" data-text="s:40;l:32;a:inherit;" data-frame_0="x:-200px;skX:85px;" data-frame_1="e:power2.out;st:1760;sp:950;sR:1760;" data-frame_999="st:w;sR:6290;auto:true;" data-loop_0="xR:2px;yR:2px;oX:50;oY:50;" data-loop_999="xR:2px;yR:2px;crd:t;sp:15000;yys:t;yyf:t;" style="z-index:15;font-family:Petit Formal Script;">
+                                    <rs-layer id="slider-80-slide-253-layer-6" data-type="text" data-color="#6b8181" data-rsp_ch="on" data-xy="x:c;xo:340px,290px,290px,55px;y:b;yo:270px,270px,270px,100px;" data-text="s:40;l:32;a:inherit;" data-frame_0="x:-200px;skX:85px;" data-frame_1="e:power2.out;st:1760;sp:950;sR:1760;" data-frame_999="st:w;sR:6290;auto:true;" data-loop_0="xR:2px;yR:2px;oX:50;oY:50;" data-loop_999="xR:2px;yR:2px;crd:t;sp:15000;yys:t;yyf:t;" style="z-index:15;font-family:Petit Formal Script;">
                                       <rs-bg-elem style="position:absolute; top:0px;left:0px;"></rs-bg-elem>
-                                      Married!
+                                      nos una siempre!
                                     </rs-layer>
                                     <a id="slider-80-slide-253-layer-7" class="rs-layer" href="tel:+18005678990" target="_self" data-type="text" data-color="rgba(89, 94, 94, 0)" data-xy="x:c;xo:-89px;y:b;yo:60px,60px,60px,20px;" data-text="s:14;l:20;fw:300;a:center;" data-dim="w:292px;h:40px;" data-rsp_o="off" data-rsp_bd="off" data-frame_1="sR:10;" data-frame_999="o:0;st:w;sR:8690;" style="z-index:11;font-family:Raleway;">
                                       <rs-bg-elem style="position:absolute; top:0px;left:0px;"></rs-bg-elem>
-                                      + 1 800-567-8990
+                                      <!-- + 1 800-567-8990 -->
                                     </a>
                                     <rs-layer id="slider-80-slide-253-layer-9" data-type="text" data-color="#595e5e" data-xy="x:c;y:b;yo:80px,80px,80px,40px;" data-text="s:14;l:20;fw:300;a:center;" data-dim="w:292px;h:40px;" data-rsp_o="off" data-rsp_bd="off" data-frame_1="sR:10;" data-frame_999="o:0;st:w;sR:8690;" style="z-index:10;font-family:Raleway;">
                                       <rs-bg-elem style="position:absolute; top:0px;left:0px;"></rs-bg-elem>
-                                      Contacts<br>
-                                      + 1 800-567-8990 or <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99f8f7f7f8c6f3f6eafce9f1d9fef4f8f0f5b7faf6f4">[email&#160;protected]</a>
+                                      <!-- Contacts<br>
+                                      + 1 800-567-8990 or
+                                      <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99f8f7f7f8c6f3f6eafce9f1d9fef4f8f0f5b7faf6f4">[email&#160;protected]</a> -->
                                     </rs-layer>
                                   </rs-slide>
                                 </rs-slides>
@@ -2939,7 +3032,8 @@
     <script src='https://alis.vamtam.com/wp-content/plugins/event-tickets/common/src/resources/js/underscore-after.js'></script>
     <script type='text/javascript' defer src='https://alis.vamtam.com/wp-includes/js/wp-util.js?ver=5.8.3' id='wp-util-not-in-footer-js'></script>
     <script type='text/javascript' defer src='https://alis.vamtam.com/wp-content/plugins/vamtam-elements-b/assets/fl-photo.js?ver=5.8.3' id='vamtam-fl-photo-js'></script>
-    <script type='text/javascript' defer src='https://alis.vamtam.com/wp-content/uploads/bb-plugin/cache/11419-layout.js?ver=d95afd51b61df05b6cdde31b473e58d5' id='fl-builder-layout-11419-js'></script>
+    <!-- <script type='text/javascript' defer src='https://alis.vamtam.com/wp-content/uploads/bb-plugin/cache/11419-layout.js?ver=d95afd51b61df05b6cdde31b473e58d5' id='fl-builder-layout-11419-js'></script> -->
+    <script type='text/javascript' defer src='./countdown.js' id='fl-builder-layout-11419-js'></script>
     <script type='text/javascript' defer src='https://alis.vamtam.com/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.5.4' defer async id='tp-tools-js'></script>
     <script type='text/javascript' defer src='https://alis.vamtam.com/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.5.4' defer async id='revmin-js'></script>
     <script type='text/javascript' id='vamtam-all-js-extra'>
