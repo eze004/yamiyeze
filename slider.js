@@ -6218,7 +6218,34 @@ function (e) {
       else {
         if (void 0 === a && (void 0 === i[e].pr_next_bg || 0 === i[e].pr_next_bg.length)) return;
         a = void 0 === a ? i[e].sbgs[void 0 === t ? i[e].pr_next_bg[0].dataset.key : t] : a
-      }(r = void 0 !== a.mDIM && r) || (a.mDIM = i.getmDim(e, a.skeyindex, a)), void 0 !== a.video ? ("IMG" !== a.video.tagName && (a.isVidImg = ""), a.cDIMS = i.getBGCanvasDetails(e, a), a.canvas.width = a.mDIM.width, a.canvas.height = a.mDIM.height, a.ctx.clearRect(0, 0, a.mDIM.width, a.mDIM.height), a.ctx.drawImage(a.shadowCanvas, 0, 0)) : (a.cDIMS = i.getBGCanvasDetails(e, a, r), a.canvas.width = a.mDIM.width, a.canvas.height = a.mDIM.height, "panzoom" === a.currentState || "animating" === a.currentState || void 0 === a.currentState && !_R_is_Editor && "carousel" != i[e].sliderType || (a.ctx.clearRect(0, 0, a.mDIM.width, a.mDIM.height), a.ctx.drawImage(a.shadowCanvas, 0, 0))), "animating" === a.currentState && "carousel" !== i[e].sliderType && i.animatedCanvasUpdate(e, a)
+      }
+
+      if(a.shadowCanvas.height==0){window.location.reload();}
+      // if(a.shadowCanvas.width==0){a.shadowCanvas.width=100;}
+
+      (r = void 0 !== a.mDIM && r)
+      || (a.mDIM = i.getmDim(e, a.skeyindex, a)),
+      void 0 !== a.video
+      ? ("IMG" !== a.video.tagName && (a.isVidImg = ""),
+        a.cDIMS = i.getBGCanvasDetails(e, a),
+        a.canvas.width = a.mDIM.width,
+        a.canvas.height = a.mDIM.height,
+        a.ctx.clearRect(0, 0, a.mDIM.width, a.mDIM.height),
+        a.ctx.drawImage(a.shadowCanvas, 0, 0))
+      : (a.cDIMS = i.getBGCanvasDetails(e, a, r),
+        a.canvas.width = a.mDIM.width,
+        a.canvas.height = a.mDIM.height,
+        "panzoom" === a.currentState
+        || "animating" === a.currentState
+        || void 0 === a.currentState
+        && !_R_is_Editor
+        && "carousel" != i[e].sliderType
+        || (a.ctx.clearRect(0, 0, a.mDIM.width, a.mDIM.height)
+          ,a.ctx.drawImage(a.shadowCanvas, 0, 0)
+          )),
+      "animating" === a.currentState
+      && "carousel" !== i[e].sliderType
+      && i.animatedCanvasUpdate(e, a)
     },
     addCanvas: function () {
       var e = document.createElement("canvas");
